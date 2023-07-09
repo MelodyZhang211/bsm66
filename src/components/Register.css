@@ -1,0 +1,11 @@
+.main{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+div.card{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+}

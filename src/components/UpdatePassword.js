@@ -5,7 +5,7 @@ function UpdatePassword() {
   return (
     <div className="main">
       <div class="h-100 col d-flex align-items-center justify-content-center">
-        <div class="card">
+        <div class="card p-5">
             <h2>Update Password  </h2>
             <br/>
             

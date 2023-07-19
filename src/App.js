@@ -6,20 +6,55 @@ import banking from "./banking.png";
 import "./App.css";
 import UpdatePassword from "./components/UpdatePassword.js";
 import Mismatch from "./components/Mismatch.js";
+import { Dashboard } from "./Customer/Dashboard.js";
+import { useState } from "react";
 
 function App() {
   const navigate = useNavigate();
   const clickOnIcon = () => navigate("/");
+  const [login, setLogin] = useState(true);
+
+  const navigate1 = useNavigate();
+  const clickOnLogout = () => navigate1("/");
+  const clickOnProfile = () => navigate1("/Dashboard");
   return (
     <>
       <nav class="navbar navbar-light bg-light">
         <button onClick={clickOnIcon}>
           <img src={banking}></img>
         </button>
-        <a class="navbar-brand">Staff Corner</a>
+        
+        {login ? (
+          <a class="navbar-brand">
+            <button
+              onClick={clickOnLogout}
+              type="button"
+            >
+                  Logout
+            </button>
+          </a>
+        ) : (
+          <a class="navbar-brand">Staff Corner</a>
+        )}
+        <a class="navbar-brand">
+        <button
+              onClick={clickOnProfile}
+              type="button"
+            >
+              Profile   
+            </button>
+        </a>
+        
+
+            
+           
+
+
+
       </nav>
       <Routes>
         <Route exact path={"/"} element={<Home />}></Route>
+
         <Route exact path={"/register"} element={<Register />}></Route>
         <Route
           exact
@@ -33,11 +68,9 @@ function App() {
           element={<UpdatePassword />}
         ></Route>
 
-        <Route
-          exact
-          path={"/Mismatch"}
-          element={<Mismatch />}
-        ></Route>
+        <Route exact path={"/Mismatch"} element={<Mismatch />}></Route>
+
+        <Route exact path={"/Dashboard"} element={<Dashboard />}></Route>
       </Routes>
 
       <nav class="navbar fixed-bottom navbar-light bg-light">

@@ -3,7 +3,7 @@ import "./Register.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useState } from "react";
 function ResetPassword() {
-    const [correct,setCorrect] = useState(false)
+    const [correct,setCorrect] = useState(true)
     const navigate = useNavigate();
     const clickOnDetails = () => {
         if (correct){
@@ -19,7 +19,7 @@ function ResetPassword() {
   return (
     <div className="main">
       <div class="h-100 col d-flex align-items-center justify-content-center">
-        <div class="card">
+        <div class="card p-5">
           <h2>Forgot Password </h2>
           <br />
 
